@@ -6,7 +6,7 @@ export const getStaticPaths = async () => {
   const data = await res.json();
 
   // map data to an array of path objects with params (id)
-  const paths = data.map((detail) => {
+  const paths = data.map((detail: any) => {
     return {
       params: { id: detail.id.toString() },
     };
@@ -18,7 +18,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id);
   const data = await res.json();
@@ -28,7 +28,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Details = ({ detail }) => {
+const Details = ({ detail }: any) => {
   console.log(detail);
   return (
     <div className="text-center bg-yellow-100 p-24 m-12">
