@@ -70,7 +70,7 @@ function index({ users }: any) {
           <div>
             {users.map((user: any) => {
               return (
-                <div className="m-12">
+                <div className="m-12" key={user.id}>
                   <Link
                     href={`/blogs/allBlogs/${user.id}`}
                     key={user.id}
